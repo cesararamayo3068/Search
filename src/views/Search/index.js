@@ -4,15 +4,14 @@ import "./style.css";
 
 export default function Search() {
     const [isAtTop, setIsAtTop]=useState(false);
-    const handleSearchClick =()=> {
+    
+    const handleCloseOpenSearch =()=> {
       setIsAtTop(!isAtTop);
     };
-    const handleCloseClick =()=> {
-        setIsAtTop(!isAtTop);
-    };
+   
   return(
     <div className={`search ${isAtTop ? "search--top":" search--center"}`}>
-        <SearchBox onSearch={handleSearchClick} onClose={handleCloseClick}/>
+        <SearchBox onSearch={handleCloseOpenSearch} onClose={handleCloseOpenSearch}/>
     </div>
 
   )
